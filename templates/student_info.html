@@ -6,7 +6,26 @@
 <body>
   <h1>{{ first }} {{ last }}</h1>
 
-  <p>GitHub Account: {{ github }}</p>
+  <p>GitHub Account: {{ github }}
+    <ul> Project : Grade<br>
+        ____________________<br>
+        {% for row in rows %}
+        <li> 
+        {{ row[0] }} : {{row[1]}}</li>
+        {% endfor %}
+
+    </ul>    
+
+    
+  </p>
+
+    <form action="/project">
+
+        <label>Enter project title:
+            <input type="text" name="project">
+        </label>
+        <input type="submit" value="Display project">
+    </form>
 
 </body>
 </html>
